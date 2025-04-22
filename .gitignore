@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# Virtual environments
+.venv/
+env/
+ENV/
+
+# IDEs
+.idea/
+.vscode/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# System
+.DS_Store
+Thumbs.db
+
+# Models
+model/*.joblib
+model/**/*.bin
+model/**/pytorch_model.bin
+
+# Logs / cache
+*.log
+*.tmp
+*.cache/
+logs/
+
+# Data
+data/
