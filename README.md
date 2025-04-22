@@ -28,7 +28,7 @@ content-moderation-nlp/
 ├── assets/                # Visuals, saved plots
 ├── data/                  # (Optional) sample CSVs
 ├── script/                # Python helper scripts
-├── streamlit_app_v2.py       # Main Streamlit app
+├── streamlit_app_v2.py    # Main Streamlit app
 ├── requirements.txt
 ├── .gitignore
 └── README.md
@@ -45,7 +45,7 @@ cd smart-spam-classifier
 
 # Create virtual environment
 python -m venv .venv
-source .venv/bin/activate  # or .venv\Scripts\activate on Windows
+.venv\Scripts\activate   # or source .venv/bin/activate on Mac/Linux
 
 # Install dependencies
 pip install -r requirements.txt
@@ -54,6 +54,7 @@ pip install -r requirements.txt
 streamlit run streamlit_app_v2.py
 ```
 
+> ⚠️ This project is tested and compatible with **Python 3.10.x** only.  
 > ⚠️ Models are loaded directly from Hugging Face Hub:
 > - 📱 SMS: [Roy-Cheong/smart-spam-sms](https://huggingface.co/Roy-Cheong/smart-spam-sms)
 > - 📧 Email: [Roy-Cheong/smart-spam-email](https://huggingface.co/Roy-Cheong/smart-spam-email)
