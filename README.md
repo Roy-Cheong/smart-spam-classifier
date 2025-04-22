@@ -7,7 +7,7 @@ A modern, AI-powered spam detection web app for SMS and email messages. Built wi
 ## 🚀 Features
 
 - 📱 SMS & 📧 Email spam classification
-- 🤖 Transformer-powered predictions (DistilBERT)
+- 🤖 Transformer-powered predictions (DistilBERT via Hugging Face Hub)
 - 🏷️ Auto-tagging system:
   - 🪙 Phishing — e.g., account, login, verify
   - 📢 Promo — e.g., free, offer, discount
@@ -25,11 +25,10 @@ A modern, AI-powered spam detection web app for SMS and email messages. Built wi
 
 ```
 content-moderation-nlp/
-├── model/                  # Saved models for SMS & Email
-├── data/                  # (Optional) raw or sample CSVs
 ├── assets/                # Visuals, saved plots
+├── data/                  # (Optional) sample CSVs
 ├── script/                # Python helper scripts
-├── streamlit_app.py       # Main Streamlit app
+├── streamlit_app_v2.py       # Main Streamlit app
 ├── requirements.txt
 ├── .gitignore
 └── README.md
@@ -41,7 +40,7 @@ content-moderation-nlp/
 
 ```bash
 # Clone the repo
-git clone https://github.com/your-username/smart-spam-classifier.git
+git clone https://github.com/Roy-Cheong/smart-spam-classifier.git
 cd smart-spam-classifier
 
 # Create virtual environment
@@ -52,8 +51,12 @@ source .venv/bin/activate  # or .venv\Scripts\activate on Windows
 pip install -r requirements.txt
 
 # Run the app
-streamlit run streamlit_app.py
+streamlit run streamlit_app_v2.py
 ```
+
+> ⚠️ Models are loaded directly from Hugging Face Hub:
+> - 📱 SMS: [Roy-Cheong/smart-spam-sms](https://huggingface.co/Roy-Cheong/smart-spam-sms)
+> - 📧 Email: [Roy-Cheong/smart-spam-email](https://huggingface.co/Roy-Cheong/smart-spam-email)
 
 ---
 
@@ -88,8 +91,8 @@ Results will appear in a table + downloadable button.
 
 ## 🛠️ Future Improvements
 
-- 🧠 Transformer attention-score-based keyword overlays
-- 📈 Interactive charts (Altair, Plotly)
+- 🧠 Attention-score-based keyword overlays
+- 📈 Interactive visual analytics (Altair/Plotly)
 
 ---
 
@@ -98,4 +101,3 @@ Results will appear in a table + downloadable button.
 Built by **Roy Cheong**  
 April 2025  
 Passionate about making AI explainable, useful, and user-friendly.
-

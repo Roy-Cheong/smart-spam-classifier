@@ -20,8 +20,8 @@ def load_model(path):
     tokenizer = AutoTokenizer.from_pretrained(path)
     return model, tokenizer
 
-sms_model, sms_tokenizer = load_model("model/transformer_sms")
-email_model, email_tokenizer = load_model("model/transformer_email")
+sms_model, sms_tokenizer = load_model("Roy-Cheong/smart-spam-sms")
+email_model, email_tokenizer = load_model("Roy-Cheong/smart-spam-email")
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # ======== UTILS ========
