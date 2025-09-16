@@ -9,7 +9,6 @@ Shows confidence, highlights risky keywords, and supports batch CSV uploads.
 
 ## Run locally
 
-```bash
 git clone https://github.com/<your-username>/smart-spam-classifier.git
 cd smart-spam-classifier
 pip install -r requirements.txt
@@ -23,8 +22,8 @@ Roy-Cheong/smart-spam-sms
 
 Roy-Cheong/smart-spam-email
 
----
-CSV format (batch tab)
+
+## CSV format (batch tab)
 Upload a CSV with one column named message:
 
 csv
@@ -34,10 +33,10 @@ message
 "Reminder: team meeting at 2pm"
 You can download results as a CSV from the app.
 
----
-Tech
+
+## Tech
 Streamlit, Transformers (Hugging Face), PyTorch, pandas, matplotlib
----
-Notes
+
+## Notes
 Threshold slider lets you make the spam detector stricter/looser.
 Keyword highlighting is for quick visibility only (not a full explanation).
