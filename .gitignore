@@ -34,4 +34,5 @@ logs/
 
 # Data
 data/
-model/ 
+model/
+assets/
