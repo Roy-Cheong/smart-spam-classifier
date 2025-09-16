@@ -1,104 +1,43 @@
-# 📬 Smart Spam Classifier (SMS + Email)
+# Smart Spam Classifier
 
-A modern, AI-powered spam detection web app for SMS and email messages. Built with `Transformers`, `PyTorch`, and `Streamlit`, it delivers fast predictions, dynamic keyword highlighting, tagging, and a smooth batch classification flow.
+A small Streamlit app that classifies **SMS** and **Email** text as **Spam** or **Not Spam**.  
+Shows confidence, highlights risky keywords, and supports batch CSV uploads.
 
----
-
-## 🚀 Features
-
-- 📱 SMS & 📧 Email spam classification
-- 🤖 Transformer-powered predictions (DistilBERT via Hugging Face Hub)
-- 🏷️ Auto-tagging system:
-  - 🪙 Phishing — e.g., account, login, verify
-  - 📢 Promo — e.g., free, offer, discount
-  - 🎁 Suspicious — e.g., won, gift, prize
-  - ✅ Legit — if nothing matches
-- ✨ Real-time **keyword highlighting** ("attention-like")
-- 📤 Batch upload with downloadable CSV results
-- 📊 Compact pie chart analytics (SPAM vs. HAM)
-- 🎚️ Spam threshold slider for sensitivity tuning
-- 💡 Tips + tag legend for non-technical users
+> Privacy: We don’t store your text. Everything is processed in memory for the current session.
 
 ---
 
-## 📂 Folder Structure
-
-```
-content-moderation-nlp/
-├── assets/                # Visuals, saved plots
-├── data/                  # (Optional) sample CSVs
-├── script/                # Python helper scripts
-├── streamlit_app_v2.py    # Main Streamlit app
-├── requirements.txt
-├── .gitignore
-└── README.md
-```
-
----
-
-## 💻 Run Locally
+## Run locally
 
 ```bash
-# Clone the repo
-git clone https://github.com/Roy-Cheong/smart-spam-classifier.git
+git clone https://github.com/<your-username>/smart-spam-classifier.git
 cd smart-spam-classifier
-
-# Create virtual environment
-python -m venv .venv
-.venv\Scripts\activate   # or source .venv/bin/activate on Mac/Linux
-
-# Install dependencies
 pip install -r requirements.txt
 
-# Run the app
-streamlit run streamlit_app_v2.py
-```
+cd app
+streamlit run app.py
+The app will try to load a local model in ./model/transformer_sms or ./model/transformer_email.
+If not found, it automatically loads from the Hugging Face Hub:
 
-> ⚠️ This project is tested and compatible with **Python 3.10.x** only.  
-> ⚠️ Models are loaded directly from Hugging Face Hub:
-> - 📱 SMS: [Roy-Cheong/smart-spam-sms](https://huggingface.co/Roy-Cheong/smart-spam-sms)
-> - 📧 Email: [Roy-Cheong/smart-spam-email](https://huggingface.co/Roy-Cheong/smart-spam-email)
+Roy-Cheong/smart-spam-sms
 
----
-
-## 🧪 Try It Out
-
-**Example input:**
-```
-URGENT: You have won a $1000 Amazon gift card. No purchase necessary.
-```
-
-**Expected Output:**
-- ✅ Prediction: **SPAM**
-- 🏷️ Tag: **🎁 Suspicious**
-- ✨ Highlights: `**URGENT**`, `**WON**`, `**GIFT**`
+Roy-Cheong/smart-spam-email
 
 ---
+CSV format (batch tab)
+Upload a CSV with one column named message:
 
-## 🗃️ CSV Upload Format
-
-Your batch file should look like:
-
-```csv
+csv
+Copy code
 message
-Congratulations! You've been selected to win!
-Please verify your account information.
-See you tomorrow at the meeting.
-```
-
-Results will appear in a table + downloadable button.
+"Congrats! You won a prize, click here"
+"Reminder: team meeting at 2pm"
+You can download results as a CSV from the app.
 
 ---
-
-## 🛠️ Future Improvements
-
-- 🧠 Attention-score-based keyword overlays
-- 📈 Interactive visual analytics (Altair/Plotly)
-
+Tech
+Streamlit, Transformers (Hugging Face), PyTorch, pandas, matplotlib
 ---
-
-## 👨‍💻 Author
-
-Built by **Roy Cheong**  
-April 2025  
-Passionate about making AI explainable, useful, and user-friendly.
+Notes
+Threshold slider lets you make the spam detector stricter/looser.
+Keyword highlighting is for quick visibility only (not a full explanation).
