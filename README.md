@@ -21,21 +21,21 @@ If not found, it automatically loads from the Hugging Face Hub:
 Roy-Cheong/smart-spam-sms
 
 Roy-Cheong/smart-spam-email
-
+---
 
 ## CSV format (batch tab)
 Upload a CSV with one column named message:
 
-csv
 Copy code
 message
 "Congrats! You won a prize, click here"
 "Reminder: team meeting at 2pm"
 You can download results as a CSV from the app.
-
+---
 
 ## Tech
 Streamlit, Transformers (Hugging Face), PyTorch, pandas, matplotlib
+---
 
 ## Notes
 Threshold slider lets you make the spam detector stricter/looser.
